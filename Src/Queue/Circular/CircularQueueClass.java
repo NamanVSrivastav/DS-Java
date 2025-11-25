@@ -1,3 +1,5 @@
+package Queue.Circular;
+
 public class CircularQueueClass {
 
     int rear,front,c,count,MaxSize,queue[];
@@ -47,12 +49,11 @@ public class CircularQueueClass {
     void print_queue()
     {
         int i = front;
-            for(int c=0;c<count;++c) {
-        System.out.print(queue[i] + " ");
-        i = (i + 1) % MaxSize;
+        for(int c=0;c<count;++c) {
+            System.out.print(queue[i] + " ");
+            i = (i + 1) % MaxSize;
 
-    }
+        }
     }
 }
-
 

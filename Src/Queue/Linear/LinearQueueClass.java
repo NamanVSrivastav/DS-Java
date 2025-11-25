@@ -1,3 +1,4 @@
+package Queue.Linear;
 public class LinearQueueClass {
 
     int rear,front,MaxSize,queue[];

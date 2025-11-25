@@ -1,8 +1,10 @@
+package Queue.Linear;
 import java.util.Scanner;
 
-public class CircularMain {
+public class LinearMain {
+
     public static void main(String[] args) {
-        CircularQueueClass obj=new CircularQueueClass();
+        LinearQueueClass obj=new LinearQueueClass();
         Scanner in=new Scanner(System.in);
         System.out.println("Enter size of queue:");
         int size=in.nextInt();
@@ -10,10 +12,10 @@ public class CircularMain {
         int choice=0;
         do
         {
-            System.out.print("\nQueue Menu");
+            System.out.print("\nqueue Menu");
             System.out.print("\n----------");
-            System.out.print("\n1.Enqueue");
-            System.out.print("\n2.Dequeue");
+            System.out.print("\n1.enqueue");
+            System.out.print("\n2.dequeue");
             System.out.print("\n3.Print");
             System.out.print("\n0.Exit");
             System.out.print("\n:");
@@ -26,29 +28,31 @@ public class CircularMain {
                         System.out.print("\nEnter element:");
                         int element=in.nextInt();
                         obj.enqueue(element);
-                        System.out.print("\n"+element+" enqueued");
+                        System.out.print("\n"+element+" enqueueed");
                     }
                     else
-                        System.out.print("\nQueue Full");
+                        System.out.print("\nqueue Full");
                     break;
                 case 2:
                     if(obj.isempty()!=true)//not empty
                     {
-                        System.out.print("\nElement dequeued:"+obj.dequeue());
+                        System.out.print("\nElement dequeueed:"+obj.dequeue());
                     }
                     else
-                        System.out.print("\nQueue Empty");
+                        System.out.print("\nqueue Empty");
                     break;
+
                 case 3:
                     if(obj.isempty()!=true)//!obj.isfull()
                     {
+                        System.out.print("\nElements in queue are:\n");
                         obj.print_queue();
                     }
                     else
                         System.out.print("\nqueue Empty");
                     break;
                 case 0:
-                    System.out.print("\nThanks for using the code @amar.career");
+                    System.out.print("\nThanks for using the code @Nova.Sri");
                     break;
                 default:
                     System.out.print("\nInvalid input. ");
@@ -56,5 +60,4 @@ public class CircularMain {
             }
         }while(choice!=0);
     }
-
 }
