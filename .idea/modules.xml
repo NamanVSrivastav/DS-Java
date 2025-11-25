@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Queue/Circular Queue/Circular Queue.iml" filepath="$PROJECT_DIR$/Queue/Circular Queue/Circular Queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Queue/CircularQueue/CircularQueue.iml" filepath="$PROJECT_DIR$/Queue/CircularQueue/CircularQueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/DS_Java.iml" filepath="$PROJECT_DIR$/DS_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Queue/Linear Queue/Linear Queue.iml" filepath="$PROJECT_DIR$/Queue/Linear Queue/Linear Queue.iml" />
       <module fileurl="file://$PROJECT_DIR$/Queue/Queue.iml" filepath="$PROJECT_DIR$/Queue/Queue.iml" />
     </modules>
   </component>

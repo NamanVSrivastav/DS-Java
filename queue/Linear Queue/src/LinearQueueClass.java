@@ -1,4 +1,4 @@
-public class QueueClass {
+public class LinearQueueClass {
 
     int rear,front,MaxSize,queue[];
     void create_queue(int size)
@@ -28,7 +28,7 @@ public class QueueClass {
 //        return(temp);
         return(queue[front++]);
     }
-    boolean isempty()
+    boolean isempty( )
     {
         return(front>rear);
     }
