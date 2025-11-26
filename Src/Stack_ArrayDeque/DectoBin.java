@@ -10,14 +10,15 @@ public class DectoBin {
         Scanner in  = new Scanner(System.in);
         System.out.println("Enter number");
         int n = in.nextInt();
-        int num = 0;
+        int num ;
 
         while (n!=0){
             num=n%2;
             stack.push(num);
             n=n/2;
         }
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty())
+        {
             System.out.print(stack.pop());
         }
 
