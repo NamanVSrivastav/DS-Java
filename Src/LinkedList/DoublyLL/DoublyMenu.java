@@ -55,6 +55,6 @@ public class DoublyMenu {
             }
         } while (choice != 0);
 
-        sc.close();
+
     }
 }

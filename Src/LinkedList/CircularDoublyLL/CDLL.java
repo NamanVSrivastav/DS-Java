@@ -1,0 +1,148 @@
+package LinkedList.CircularDoublyLL;
+import java.util.Scanner;
+
+public class CDLL {
+
+    Node head = null, tail = null;
+
+    void insert_head(int data) {
+        Node n = new Node(data);
+        if (head == null) {
+            head = tail = n;
+            head.next = head;
+            head.prev = head;
+        } else {
+            n.next = head;
+            n.prev = tail;
+            tail.next = n;
+            head.prev = n;
+            head = n;
+        }
+        System.out.print("\nValue " + data + " inserted at the Head.");
+    }
+
+    void insert_tail(int data) {
+        Node n = new Node(data);
+        if (tail == null) {
+            head = tail = n;
+            head.next = head;
+            head.prev = head;
+        } else {
+            n.prev = tail;
+            n.next = head;
+            tail.next = n;
+            head.prev = n;
+            tail = n;
+        }
+        System.out.print("\nValue " + data + " inserted at the Tail.");
+    }
+    void delete_Value(int key) {
+        if (head == null) {
+            System.out.print("\nCircular Doubly Linked list Empty");
+        }
+
+        Node t = head;
+        do {
+            if (t.data == key) {
+
+                if (head == tail) {
+                    head = tail = null;
+                }else if (t == head) {
+                    head = head.next;
+                    head.prev = tail;
+                    tail.next = head;
+                }else if (t == tail) {
+                    tail = tail.prev;
+                    tail.next = head;
+                    head.prev = tail;
+                } else {
+                    t.prev.next = t.next;
+                    t.next.prev = t.prev;
+                }
+                System.out.println("Value" + key + "deleted successfully.");
+                return;
+            }
+            t = t.next;
+        } while (t != head);
+    }
+    void display_forward() {
+        if (head == null)
+            System.out.print("\nList is Empty");
+        else {
+            Node t = head;
+            do {
+                System.out.print("| " + t.data + " |->");
+                t = t.next;
+            } while (t != head);
+        }
+    }
+
+    void display_backward() {
+        if (tail == null) {
+            System.out.print("\nList is Empty");
+            return;
+        }
+
+        Node t = tail;
+        System.out.print("\nBackward List: ");
+
+        do {
+            System.out.print("<-| " + t.data + " |");
+            t = t.prev;
+        } while (t != tail);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        CDLL list = new CDLL();
+        int choice, data;
+
+        do {
+            System.out.println("\n -- Circular Linked List Menu --");
+            System.out.println("1. Insert at Head ");
+            System.out.println("2. Insert at Tail ");
+            System.out.println("3. Delete by Value ");
+            System.out.println("4. Display Forward ");
+            System.out.println("5. Display Backward ");
+            System.out.println("0. Exit ");
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter data: ");
+                    data = sc.nextInt();
+                    list.insert_head(data);
+                    break;
+
+                case 2:
+                    System.out.print("Enter data: ");
+                    data = sc.nextInt();
+                    list.insert_tail(data);
+                    break;
+                case 3:
+                    System.out.print("Enter value to delete: ");
+                    data = sc.nextInt();
+                    list.delete_Value(data);
+                    break;
+
+                case 4:
+                    list.display_forward();
+
+                    break;
+
+                case 5:
+                    list.display_backward();
+
+                    break;
+
+                case 0:
+                    System.out.println("Exiting program. \nGoodbye!");
+                    break;
+
+                default:
+                    System.out.println("Invalid input.");
+            }
+        } while (choice != 0);
+
+        sc.close();
+}
+}

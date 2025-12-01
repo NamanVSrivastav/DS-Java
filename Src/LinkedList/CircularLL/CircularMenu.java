@@ -2,7 +2,7 @@ package LinkedList.CircularLL;
 
 import java.util.Scanner;
 
-public class CircularMenue {
+public class CircularMenu {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Circular list = new Circular();

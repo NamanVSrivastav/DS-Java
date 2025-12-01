@@ -19,6 +19,7 @@ public class Stack_Class
     //isfull():Returns true if stack is full.
     boolean isfull()
     {
+
         return(tos==MaxSize-1);
     }
     //pop removes and returns element at top of stack
@@ -31,11 +32,13 @@ public class Stack_Class
     }
     boolean isempty()
     {
+
         return(tos==-1);
     }
     //peek():Only returns element on top does not remove.
     int peek()
     {
+
         return(stack[tos]);
     }
     //Should be performed in Li Fo manner, last in first out from top to bottom.
